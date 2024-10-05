@@ -1,0 +1,61 @@
+==========================
+Filament v3.2.93
+=========================
+
+php artisan --version
+
+composer require filament/filament:"^3.2" -W
+php artisan filament:install --panels
+
+php artisan migrate
+
+id: Puede ser admin
+
+php artisan make:filament-user
+
+	Alexander Anchicoque
+	ing.anchicoque@gmail.com
+	12345678
+
+	http://cmsfilamentphp.run/dashboard/login
+
+	php artisan route:list
+
+en DashboardPanelProvider.php desativo el widgets de filament y activo el del profile
+
+	->widgets([
+                Widgets\AccountWidget::class,
+                //Widgets\FilamentInfoWidget::class,
+
+    ])
+            ->profile()
+            ->middleware([
+
+Limitar es acceso al dashboard
+    App\Models\User.php
+
+Crer el CRUD y El menu de User por que este ya tiene modelo y migración
+	php artisan make:filament-resource User --generate
+
+Crer el CRUD de Category y Post para lo cual debemos crear los modelos y migraciones
+	php artisan make:model Category -m
+	php artisan make:model Post -m
+	php artisan make:model Comment -m
+
+Crear todo lo referente a los modelos y modificar el model/User
+	public function posts() : HasMany{
+        return $this->hasMany(Post::class);
+    }
+
+php artisan migrate
+
+php artisan make:filament-resource --generate
+	Category
+	Post
+	comment
+
+php artisan make:filament-relation-manager PostResource comments body
+
+php artisan make:controller HomeController
+
+minuto 14:18	

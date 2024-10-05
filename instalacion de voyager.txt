@@ -1,0 +1,20 @@
+{
+	"validation": {
+		"rule": "required",
+		"messages": {
+			"required": "El campo nombre es obligatorio"
+		}
+	}
+}
+
+{
+	"validation": {
+		"rule": "required",
+		"add": {
+			"rule": "min:10"
+		},
+		"edit": {
+			"rule": "min:20"
+		}
+	}
+}

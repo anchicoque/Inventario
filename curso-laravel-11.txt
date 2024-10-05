@@ -1,0 +1,16 @@
+
+=============
+cd curso-laravel-11
+13-07-2024
+==========================
+
+composer create-project laravel/laravel curso-laravel-11
+
+php artisan migrate
+
+Crear el modelo con la migración en un solo paso
+php artisan make:model Comment -m
+
+
+video 
+Curso Completo de Laravel 11 Parte 4: Factories y Seeders

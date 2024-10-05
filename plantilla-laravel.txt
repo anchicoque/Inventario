@@ -1,0 +1,11 @@
+https://github.com/elrincondeisma/plantilla-laravel
+
+git clone https://github.com/elrincondeisma/plantilla-laravel
+cd plantilla-laravel
+
+composer install
+npm install
+//para corregir las vuneravilidades (npm audit fix)
+npm audit fix
+
+npm run dev

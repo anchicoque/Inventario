@@ -1,0 +1,28 @@
+crud-laravel
+19-07-2024
+====================
+https://www.youtube.com/watch?v=Po6kwG-lHv0&ab_channel=HilariWeb
+https://github.com/HilariWeb/crud-laravel
+
+
+git clone https://github.com/HilariWeb/crud-laravel.git
+
+composer install
+
+clonar el archivo .env
+	credenciales de la database
+
+php artisan key:generate
+
+//composer require/ui
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire --dark
+npm install
+npm run build
+php artisan migrate
+
+php artisan db:seed
+	user admin:
+	ing.anchicoque@gmail.com
+	12345678

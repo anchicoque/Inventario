@@ -1,0 +1,94 @@
+Instalar  Breeze:
+https://laravel.com/docs/11.x/starter-kits
+
+	composer require laravel/breeze --dev
+
+	php artisan breeze:install
+
+	php artisan migrate
+
+
+==================================================================
+configurar los hostmane hijos
+	C:\Windows\System32\drivers\etc
+
+Configurar los hostname en el archivo httpd-vhost-conf
+
+	<VirtualHost *:80>
+    ServerAdmin multiinquilino.run
+    DocumentRoot "C:/laragon/www/multiinquilino/public"
+	</VirtualHost>
+
+	<VirtualHost *:80>
+	    ServerAdmin bar.multiinquilino.run
+	    DocumentRoot "C:/laragon/www/multiinquilino/public"
+	</VirtualHost>
+
+	<VirtualHost *:80>
+	    ServerAdmin foo.multiinquilino.run
+	    DocumentRoot "C:/laragon/www/multiinquilino/public"
+	</VirtualHost>
+
+
+Instalar tenancyforlaravel
+https://laravel.com/docs/11.x/starter-kits
+
+	composer require stancl/tenancy
+
+	php artisan tenancy:install
+
+	php artisan migrate
+
+modificar el modelo Models/Tenant.php
+https://tenancyforlaravel.com/docs/v3/tenants/#tenants
+
+	<?php
+
+	namespace App\Models;
+
+	use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
+	use Stancl\Tenancy\Contracts\TenantWithDatabase;
+	use Stancl\Tenancy\Database\Concerns\HasDatabase;
+	use Stancl\Tenancy\Database\Concerns\HasDomains;
+
+	class Tenant extends BaseTenant implements TenantWithDatabase
+	{
+	    use HasDatabase, HasDomains;
+	}
+
+En el archivo config/tenacy.pho configurar
+
+	//use Stancl\Tenancy\Database\Models\Tenant;
+	use App\Models\Tenant;
+
+	Modificar el dominio central
+
+	'central_domains' => [
+	        '127.0.0.1',
+	        'localhost',
+	    ],
+
+	Por:
+
+	'central_domains' => [
+        'multiinquilino.run/',        
+    ],
+
+
+Creo el inquilino 1:
+
+$tenant1 = App\Models\Tenant::create(['id' => 'foo']);
+
+$tenant1->domains()->create(['domain' => 'foo.multiinquilino.run']);
+
+
+Creo el inquilino 2:
+
+$tenant1 = App\Models\Tenant::create(['id' => 'bar']);
+
+$tenant1->domains()->create(['domain' => 'bar.multiinquilino.run']);
+
+
+Creo un CRUD
+
+php artisan make:controller TenantController -r --model="Tenant"

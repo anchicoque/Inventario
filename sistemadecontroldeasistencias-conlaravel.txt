@@ -1,0 +1,26 @@
+sistemadecontroldeasistencias-conlaravel
+19-07-2024
+====================
+https://www.youtube.com/playlist?list=PLgLkBkgzqH2CH3vPCcMdkCNW152LBvJuN
+https://github.com/HilariWeb/sistemadecontroldeasistencias-conlaravel
+
+
+git clone https://github.com/HilariWeb/sistemadecontroldeasistencias-conlaravel.git
+
+composer install
+
+clonar el archivo .env
+	credenciales de la database
+
+php artisan key:generate
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire --dark
+npm install
+npm run build
+php artisan migrate
+
+php artisan db:seed
+	user admin:
+	ing.anchicoque@gmail.com
+	12345678

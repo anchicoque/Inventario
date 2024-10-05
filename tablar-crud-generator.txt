@@ -1,0 +1,22 @@
+Build v10.48.15
+
+
+Instalación:
+	composer require takielias/tablar:"^11"
+
+Instalar el ajuste preestablecido
+	php artisan tablar:install
+
+instalar paquetes
+	npm install
+
+En el archivo AppServiceProvider.php
+	use Illuminate\Support\Facades\Schema;
+	Schema::defaultStringLength(191);
+
+en el archivo .env configurar el nombre de la base de datos
+	APP_URL=http://tablar-crud-generator.run
+	DB_DATABASE=tablar-crud-generator
+
+npm run dev
+

@@ -1,0 +1,9 @@
+instalar jetstream:
+https://jetstream.laravel.com/installation.html
+	composer require laravel/jetstream
+
+install EasyPanel:
+	composer require rezaamini-ir/laravel-easypanel
+	php artisan panel:install
+
+

@@ -1,0 +1,21 @@
+8:02 / 12:02
+
+php artisan make:model Event -ms
+
+Configurar el .env:
+
+	APP_URL=http://fullcalendar.run
+
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=fullcalendar
+	DB_USERNAME=root
+	DB_PASSWORD=
+
+php artisan migrate:fresh --seed
+
+
+https://www.youtube.com/watch?v=Do3d5KuQbcE&ab_channel=CodewithLuis
+minuto 5:35
+

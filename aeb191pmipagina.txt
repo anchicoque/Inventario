@@ -1,0 +1,21 @@
+creamos el:
+	model
+	seeder
+	migration
+	factory
+	controller
+
+	php artisan make:model Post -msfc
+
+campos de la migration:
+	$table->string('title');
+	$table->string('slug');
+	$table->string('body');
+
+Corremos la migracion:
+	php artisan migrate
+
+=====================
+21-09-2024
+
+
